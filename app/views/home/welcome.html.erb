@@ -1,0 +1,67 @@
+<%#*<h3>Password Create</h3>%>
+
+<%#= form_for @update_password, :as => :user_pssword, :url => password_update_path, :method => "post" do |f| %>
+
+<%#*<p>%>
+<%#*<div class="field">%>
+  <%#*<label>Password</label><br/>%>
+  <%#= f.password_field :password, :placeholeder => "password" %>
+<%#*</div>%>
+<%#*</p>%>
+
+<%#*<p>%>
+<%#*<div class="field">%>
+  <%#*<label>Password Confirmation</label><br/>%>
+  <%#= f.password_field :password_confirmation, :placeholeder => "password" %>
+<%#*</div>%>
+<%#*</p>%>
+         <%#=  f.hidden_field :user_id, :value=>session[:user_id] %>
+<%#*<p>%>
+  <%#= f.submit "Update Password" %>
+<%#*</p>%>
+
+<%# end  %>
+
+<h3>welcome <%= @update_password.name %></h3>
+
+<h2>Account Info</h2>
+<%= form_for @update_password, :as => :update, :url => password_update_path, :id => @update_password.id, :method => "post" do |f|%>
+  <p>
+<div class="field">
+  <label>First Name</label><br/>
+ <%= f.text_field :first_name %>
+</div>
+</p>
+ <p>
+<div class="field">
+  <label>Last Name</label><br/>
+ <%= f.text_field :last_name %>
+</div>
+</p>
+ <p>
+<div class="field">
+  <label>Gender</label><br/>
+ <%= f.text_field :gender %>
+</div>
+</p>
+ <p>
+<div class="field">
+  <label>Address</label><br/>
+ <%= f.text_field :address %>
+</div>
+</p>
+
+<p>
+<div class="field">
+  <label>City</label><br/>
+ <%= f.text_field :city %>
+</div>
+</p>
+
+         <%=  f.hidden_field :user_id, :value=>session[:user_id] %>
+<p>
+  <%= f.submit "Update Password" %>
+</p>
+
+
+<% end %>
